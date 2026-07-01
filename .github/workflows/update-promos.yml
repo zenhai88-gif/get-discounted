@@ -1,0 +1,51 @@
+name: Update promotions
+
+# Runs the scraper on a schedule, commits any changes to promos.json,
+# and sends a web push for genuinely new promos.
+on:
+  schedule:
+    - cron: '0 1 * * *'      # daily at 01:00 UTC (09:00 MYT)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install deps
+        run: npm install
+
+      - name: Run ingestion
+        id: ingest
+        run: npm run ingest
+
+      - name: Commit updated promos.json
+        run: |
+          if [[ -n "$(git status --porcelain promos.json)" ]]; then
+            git config user.name  "getdiscounted-bot"
+            git config user.email "bot@getdiscounted.my"
+            git add promos.json
+            git commit -m "chore: auto-update promotions ($(date -u +%Y-%m-%d))"
+            git push
+          else
+            echo "No changes."
+          fi
+
+      - name: Notify subscribers of new promos
+        if: steps.ingest.outputs.new_count
+        env:
+          SITE_URL: ${{ secrets.SITE_URL }}
+          ADMIN_TOKEN: ${{ secrets.ADMIN_TOKEN }}
+        run: |
+          curl -sS -X POST "$SITE_URL/.netlify/functions/send" \
+            -H "Content-Type: application/json" \
+            -H "x-admin-token: $ADMIN_TOKEN" \
+            -d "{\"title\":\"${{ steps.ingest.outputs.notify_title }}\",\"body\":\"${{ steps.ingest.outputs.notify_body }}\",\"url\":\"$SITE_URL\",\"tag\":\"promo\"}"

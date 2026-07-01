@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Discounted — Malaysia Credit Card Promotions</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0f1226">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Get Discounted">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<style>
+  :root{
+    --bg:#0f1226; --panel:#171a35; --panel2:#1e2245; --text:#eef0ff;
+    --muted:#9aa0c7; --accent:#5b8cff; --line:#2a2f5a;
+    --green:#2ecc71; --amber:#ffb020; --pink:#ff5d8f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:linear-gradient(180deg,#0f1226,#0b0d1f);color:var(--text);min-height:100vh}
+  header{padding:26px 20px 10px;text-align:center}
+  header h1{margin:0;font-size:28px;letter-spacing:.3px}
+  header h1 .badge{color:var(--accent)}
+  header p{margin:8px 0 0;color:var(--muted);font-size:14px}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 16px 60px}
+  .toolbar{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0 6px}
+  .btn{background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:10px;
+    padding:9px 14px;font-size:13px;cursor:pointer;transition:.15s;display:flex;gap:6px;align-items:center}
+  .btn:hover{border-color:var(--accent)}
+  .btn.on{background:var(--accent);border-color:var(--accent);color:#fff}
+  .synced{text-align:center;color:var(--muted);font-size:12px;margin-bottom:6px}
+  .synced .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:5px;vertical-align:middle}
+  .synced .dot.stale{background:var(--amber)}
+  .controls{position:sticky;top:0;z-index:10;background:rgba(15,18,38,.92);
+    backdrop-filter:blur(8px);padding:14px 0;border-bottom:1px solid var(--line);margin-bottom:16px}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  input[type=search],select{background:var(--panel);color:var(--text);border:1px solid var(--line);
+    border-radius:10px;padding:10px 12px;font-size:14px;outline:none}
+  input[type=search]{flex:1;min-width:220px}
+  input[type=search]:focus,select:focus{border-color:var(--accent)}
+  .stat{color:var(--muted);font-size:13px;margin-left:auto}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .chip{border:1px solid var(--line);background:var(--panel);color:var(--muted);
+    padding:6px 12px;border-radius:999px;font-size:13px;cursor:pointer;transition:.15s}
+  .chip.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;
+    display:flex;flex-direction:column;gap:10px;transition:.15s;position:relative}
+  .card:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .card.new{border-color:var(--green)}
+  .card.new::after{content:"NEW";position:absolute;top:-8px;right:12px;background:var(--green);
+    color:#04210f;font-size:10px;font-weight:800;padding:2px 7px;border-radius:6px;letter-spacing:.5px}
+  .top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+  .merchant{font-size:17px;font-weight:700;line-height:1.25}
+  .bank{font-size:12px;color:var(--muted);margin-top:2px}
+  .offer{font-size:14px;line-height:1.4}
+  .cat{font-size:11px;text-transform:uppercase;letter-spacing:.5px;padding:4px 8px;
+    border-radius:6px;font-weight:700;white-space:nowrap}
+  .near{font-size:12px;color:var(--green)}
+  .meta{display:flex;justify-content:space-between;align-items:center;margin-top:auto;
+    padding-top:8px;border-top:1px solid var(--line)}
+  .expiry{font-size:12px;color:var(--amber)}
+  .expiry.soon{color:var(--pink)}
+  a.link{font-size:12px;color:var(--accent);text-decoration:none;font-weight:600}
+  a.link:hover{text-decoration:underline}
+  .empty{text-align:center;color:var(--muted);padding:60px 20px}
+  footer{text-align:center;color:var(--muted);font-size:12px;padding:24px 16px;border-top:1px solid var(--line)}
+  .disclaimer{background:var(--panel2);border:1px solid var(--line);border-radius:12px;
+    padding:12px 16px;font-size:13px;color:var(--muted);margin-bottom:16px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Get <span class="badge">Discounted</span></h1>
+  <p>Credit card promotions from Malaysian banks — live, sorted by merchant</p>
+</header>
+
+<div class="wrap">
+  <div class="toolbar">
+    <button class="btn" id="refreshBtn">↻ Refresh now</button>
+    <button class="btn" id="locBtn">📍 Near me</button>
+    <button class="btn" id="notifyBtn">🔔 Enable alerts</button>
+  </div>
+  <div class="synced" id="synced"></div>
+
+  <div class="controls">
+    <div class="row">
+      <input type="search" id="search" placeholder="Search merchant, bank, offer…">
+      <select id="bankFilter"><option value="">All banks</option></select>
+      <select id="sortBy">
+        <option value="merchant">Sort: Merchant (A–Z)</option>
+        <option value="bank">Sort: Bank</option>
+        <option value="expiry">Sort: Expiring soon</option>
+        <option value="distance">Sort: Nearest (needs location)</option>
+      </select>
+      <span class="stat" id="count"></span>
+    </div>
+    <div class="chips" id="catChips"></div>
+  </div>
+
+  <div class="disclaimer" id="disclaimer">
+    ⚠️ Offers are compiled from public bank pages and change frequently. Always confirm terms on the
+    bank's official page before spending. Informational aggregator — not affiliated with any bank.
+  </div>
+
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" style="display:none">No promotions match your filters.</div>
+</div>
+
+<footer>Built for the <b>Get Discounted</b> project · Data auto-syncs from <code>promos.json</code></footer>
+
+<script>
+/* ---------- Embedded fallback (used when promos.json can't be fetched, e.g. opened via file://) ---------- */
+const EMBEDDED = {"lastUpdated":"2026-07-01T09:00:00+08:00","promos":[
+{"id":"rhb-feifei","merchant":"Fei Fei Crab","cat":"Dining","bank":"RHB","card":"RHB Credit Cards","offer":"Special deal at all outlets, dine-in & takeaway","expiry":"2026-12-31","link":"https://www.rhbgroup.com/cards/promotions-privileges/index.html","outlets":[{"name":"Fei Fei Crab Kepong","lat":3.2078,"lng":101.6353},{"name":"Fei Fei Crab Cheras","lat":3.0833,"lng":101.7460}]},
+{"id":"cimb-airportdining","merchant":"Airport Dining (selected)","cat":"Dining","bank":"CIMB","card":"CIMB Credit Cards","offer":"Up to RM68 cashback, min RM2,000 monthly spend","expiry":"2027-01-31","link":"https://deals.cimb.com/","outlets":[{"name":"KLIA Terminal 1","lat":2.7456,"lng":101.7072},{"name":"klia2","lat":2.7413,"lng":101.6865}]},
+{"id":"cimb-dining30","merchant":"Dining outlets (nationwide)","cat":"Dining","bank":"CIMB","card":"CIMB Credit Cards","offer":"Up to 30% off dining","expiry":"2026-12-31","link":"https://deals.cimb.com/my/dining"},
+{"id":"pbb-dining20","merchant":"Dining, groceries & pharmacies","cat":"Dining","bank":"Public Bank","card":"PB Mastercard","offer":"20% cashback, min RM1,000/month","expiry":"2026-08-31","link":"https://www.pbebank.com/en/promotions/latest-promotions/20-cash-back-on-dining-groceries-pharmacies-with-pb-mastercard-credit-card/"},
+{"id":"scb-omakase","merchant":"Omakase & fine dining","cat":"Dining","bank":"Standard Chartered","card":"Priority Banking Cards","offer":"Up to 60% cashback (Priority Dining Privileges)","expiry":"2026-06-30","link":"https://www.sc.com/my/promotions/prioritydiningprivileges/"},
+{"id":"rhb-shell","merchant":"Shell","cat":"Fuel","bank":"RHB","card":"RHB Credit Cards","offer":"12% petrol cashback (highest in Malaysia)","expiry":"2026-12-31","link":"https://ringgitplus.com/en/credit-card/RHB/","outlets":[{"name":"Shell Jalan Tun Razak","lat":3.1620,"lng":101.7130},{"name":"Shell Bangsar","lat":3.1290,"lng":101.6790}]},
+{"id":"aeon-platinum","merchant":"AEON & AEON BiG","cat":"Shopping","bank":"AEON","card":"AEON Platinum Mastercard","offer":"5% cash rebate monthly + up to 4x AEON Points","expiry":"2026-12-31","link":"https://myaeoncredit.com.my/cards/credit-cards/","outlets":[{"name":"AEON Mid Valley","lat":3.1177,"lng":101.6774},{"name":"AEON BiG Subang","lat":3.0759,"lng":101.5820}]},
+{"id":"rakyat-world","merchant":"Hotels, flights & dining","cat":"Travel","bank":"Bank Rakyat","card":"World Mastercard Credit Card-i","offer":"5% cashback (cap RM1,500/yr) + 0% forex markup","expiry":"2026-12-31","link":"https://ringgitplus.com/en/credit-card/Bank-Rakyat/"},
+{"id":"mbb-signup","merchant":"New cardholder bonus","cat":"Sign-up","bank":"Maybank","card":"Eligible Maybank Cards","offer":"RM2,500 cash via DuitNow (every 40th applicant)","expiry":"2026-07-06","link":"https://www.maybank2u.com.my/maybank2u/malaysia/en/personal/promotions/maybank_cards.page"}
+]};
+
+const TODAY = new Date("2026-07-01");
+const catColors = {Dining:'#ff5d8f',Shopping:'#5b8cff',Travel:'#22c55e',Fuel:'#ffb020',Everyday:'#a78bfa',"Sign-up":'#f97316',Rewards:'#14b8a6'};
+const REFRESH_MS = 90000;   // auto-refresh every 90s
+const NEAR_RADIUS_KM = 15;
+
+let DATA = EMBEDDED;
+let knownIds = new Set(EMBEDDED.promos.map(p=>p.id));
+let userPos = null;          // {lat,lng}
+let activeCat = '';
+let firstLoad = true;
+
+const $ = id => document.getElementById(id);
+const grid=$('grid'), empty=$('empty'), search=$('search'), bankFilter=$('bankFilter'),
+      sortBy=$('sortBy'), count=$('count'), catChips=$('catChips'), synced=$('synced');
+
+/* ---------- user preferences (persisted) ---------- */
+const PREF_KEY = 'gd_prefs_v1';
+function loadPrefs(){ try{ return JSON.parse(localStorage.getItem(PREF_KEY)) || {}; }catch{ return {}; } }
+function savePrefs(){
+  const p = { q:search.value, bank:bankFilter.value, cat:activeCat, sort:sortBy.value };
+  try{ localStorage.setItem(PREF_KEY, JSON.stringify(p)); }catch{}
+}
+function applyPrefs(){
+  const p = loadPrefs();
+  if(p.q) search.value = p.q;
+  if(p.sort) sortBy.value = p.sort;
+  if(p.cat){ activeCat = p.cat; }   // chips reflect this after they're built
+  return p;
+}
+
+/* ---------- data loading + auto refresh ---------- */
+async function loadData(manual){
+  try{
+    const res = await fetch('promos.json?_='+Date.now(), {cache:'no-store'});
+    if(!res.ok) throw new Error('http '+res.status);
+    const json = await res.json();
+    const newIds = json.promos.map(p=>p.id);
+    const freshOnes = newIds.filter(id=>!knownIds.has(id));
+    DATA = json;
+    // detect genuinely new promos (skip very first load)
+    if(!firstLoad && freshOnes.length){
+      notifyNew(freshOnes.map(id=>json.promos.find(p=>p.id===id)));
+    }
+    knownIds = new Set(newIds);
+    setSynced(json.lastUpdated, true);
+  }catch(e){
+    // file:// or offline — keep embedded snapshot
+    setSynced(DATA.lastUpdated, false, e.message);
+  }
+  firstLoad = false;
+  buildBankOptions();
+  render();
+}
+function setSynced(iso, live, err){
+  const t = new Date(iso);
+  const when = t.toLocaleString('en-MY',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
+  synced.innerHTML = `<span class="dot ${live?'':'stale'}"></span>`+
+    (live ? `Live · last synced ${when}` : `Offline snapshot (${when}) — host on a server for live sync`);
+}
+
+/* ---------- notifications ---------- */
+function notifyNew(promos){
+  if(!('Notification' in window) || Notification.permission!=='granted') return;
+  // if location known, prioritise nearby ones
+  let relevant = promos;
+  if(userPos){
+    const near = promos.filter(p=>nearestKm(p)!=null && nearestKm(p)<=NEAR_RADIUS_KM);
+    if(near.length) relevant = near;
+  }
+  const first = relevant[0];
+  new Notification('Get Discounted — new promo', {
+    body: `${first.merchant} · ${first.bank}: ${first.offer}` +
+          (relevant.length>1 ? ` (+${relevant.length-1} more)` : '')
+  });
+}
+$('notifyBtn').onclick = async ()=>{
+  if(!('Notification' in window)){ alert('This browser does not support notifications.'); return; }
+  const perm = await Notification.requestPermission();
+  if(perm==='granted'){
+    $('notifyBtn').classList.add('on'); $('notifyBtn').textContent='🔔 Alerts on';
+    await subscribePush();   // registers server push if a VAPID key + backend are configured
+    new Notification('Get Discounted', {body:"You'll be alerted when new promos appear" + (userPos?' near you.':'.')});
+  }
+};
+
+/* ---------- location ---------- */
+function haversine(a,b){
+  const R=6371, dLat=(b.lat-a.lat)*Math.PI/180, dLng=(b.lng-a.lng)*Math.PI/180;
+  const s=Math.sin(dLat/2)**2+Math.cos(a.lat*Math.PI/180)*Math.cos(b.lat*Math.PI/180)*Math.sin(dLng/2)**2;
+  return 2*R*Math.asin(Math.sqrt(s));
+}
+function nearestKm(p){
+  if(!userPos || !p.outlets) return null;
+  return Math.min(...p.outlets.map(o=>haversine(userPos,o)));
+}
+function nearestOutlet(p){
+  if(!userPos || !p.outlets) return null;
+  return p.outlets.map(o=>({...o,d:haversine(userPos,o)})).sort((a,b)=>a.d-b.d)[0];
+}
+$('locBtn').onclick = ()=>{
+  if(!navigator.geolocation){ alert('Geolocation not supported.'); return; }
+  $('locBtn').textContent='📍 Locating…';
+  navigator.geolocation.getCurrentPosition(
+    pos=>{
+      userPos={lat:pos.coords.latitude,lng:pos.coords.longitude};
+      $('locBtn').classList.add('on'); $('locBtn').textContent='📍 Near me: on';
+      sortBy.value='distance'; render();
+    },
+    err=>{ $('locBtn').textContent='📍 Near me'; alert('Location error: '+err.message); },
+    {enableHighAccuracy:true, timeout:10000}
+  );
+};
+
+/* ---------- UI build ---------- */
+let prefsBank; // applied once after options exist
+function buildBankOptions(){
+  const cur=bankFilter.value;
+  bankFilter.innerHTML='<option value="">All banks</option>';
+  [...new Set(DATA.promos.map(p=>p.bank))].sort().forEach(b=>{
+    const o=document.createElement('option');o.value=b;o.textContent=b;bankFilter.appendChild(o);
+  });
+  bankFilter.value=cur;
+  if(prefsBank!==undefined){ bankFilter.value=prefsBank; prefsBank=undefined; }
+}
+// restore saved preferences before building the category chips
+{ const _p = applyPrefs(); prefsBank = _p.bank || undefined; }
+['All',...Object.keys(catColors)].forEach(c=>{
+  const on = (c==='All' && !activeCat) || (c===activeCat);
+  const chip=document.createElement('div');chip.className='chip'+(on?' active':'');
+  chip.textContent=c;chip.onclick=()=>{activeCat=c==='All'?'':c;
+    [...catChips.children].forEach(x=>x.classList.remove('active'));chip.classList.add('active');
+    savePrefs();render();};
+  catChips.appendChild(chip);
+});
+
+function fmtDate(s){return new Date(s).toLocaleDateString('en-MY',{day:'numeric',month:'short',year:'numeric'});}
+function daysLeft(s){return Math.round((new Date(s)-TODAY)/86400000);}
+
+function render(){
+  const q=search.value.toLowerCase().trim(), bank=bankFilter.value, sort=sortBy.value;
+  let list=DATA.promos.filter(p=>{
+    if(bank&&p.bank!==bank)return false;
+    if(activeCat&&p.cat!==activeCat)return false;
+    if(q&&!(p.merchant+p.bank+p.offer+p.card+p.cat).toLowerCase().includes(q))return false;
+    return daysLeft(p.expiry)>=0;
+  });
+  list.sort((a,b)=>{
+    if(sort==='bank')return a.bank.localeCompare(b.bank)||a.merchant.localeCompare(b.merchant);
+    if(sort==='expiry')return daysLeft(a.expiry)-daysLeft(b.expiry);
+    if(sort==='distance'){const da=nearestKm(a)??1e9, db=nearestKm(b)??1e9;return da-db;}
+    return a.merchant.localeCompare(b.merchant)||a.bank.localeCompare(b.bank);
+  });
+  count.textContent=list.length+' offer'+(list.length!==1?'s':'');
+  grid.innerHTML=''; empty.style.display=list.length?'none':'block';
+  list.forEach(p=>{
+    const dl=daysLeft(p.expiry), soon=dl<=30, km=nearestKm(p);
+    const el=document.createElement('div');el.className='card';
+    el.innerHTML=`
+      <div class="top">
+        <div><div class="merchant">${p.merchant}</div>
+        <div class="bank">${p.bank} · ${p.card}</div></div>
+        <span class="cat" style="background:${catColors[p.cat]}22;color:${catColors[p.cat]}">${p.cat}</span>
+      </div>
+      <div class="offer">${p.offer}</div>
+      ${km!=null?`<div class="near">📍 ${nearestOutlet(p).name} ~${km.toFixed(1)} km · <a class="link" href="https://www.google.com/maps/search/?api=1&query=${nearestOutlet(p).lat},${nearestOutlet(p).lng}" target="_blank" rel="noopener">map</a></div>`:''}
+      <div class="meta">
+        <span class="expiry${soon?' soon':''}">${soon?'⏳ ':''}Until ${fmtDate(p.expiry)}</span>
+        <a class="link" href="${p.link}" target="_blank" rel="noopener">View terms →</a>
+      </div>`;
+    grid.appendChild(el);
+  });
+}
+
+search.oninput=()=>{savePrefs();render();};
+bankFilter.onchange=()=>{savePrefs();render();};
+sortBy.onchange=()=>{savePrefs();render();};
+$('refreshBtn').onclick=()=>loadData(true);
+
+/* ---------- PWA: service worker + web push scaffold ---------- */
+// VAPID public key — pairs with VAPID_PRIVATE_KEY set in Netlify env.
+const VAPID_PUBLIC_KEY = 'BHGVYkvVRzmwIDrvey7MYDXLzKAZiPb1_htrgpM30yGTG6Gpy96Z3gYUO-rPZA11diqs1E2KENYggb_7m8QRO_4';
+let swReg = null;
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(reg => { swReg = reg; })
+      .catch(() => { /* SW needs http(s); ignored on file:// */ });
+  });
+}
+
+function urlB64ToUint8Array(base64){
+  const pad='='.repeat((4-base64.length%4)%4);
+  const b=(base64+pad).replace(/-/g,'+').replace(/_/g,'/');
+  const raw=atob(b); return Uint8Array.from([...raw].map(c=>c.charCodeAt(0)));
+}
+
+// Subscribe to real web push (needs a VAPID key + backend to send). Falls back gracefully.
+async function subscribePush(){
+  if(!swReg || !('PushManager' in window) || !VAPID_PUBLIC_KEY) return false;
+  try{
+    const sub = await swReg.pushManager.subscribe({
+      userVisibleOnly:true,
+      applicationServerKey: urlB64ToUint8Array(VAPID_PUBLIC_KEY)
+    });
+    // Send the subscription + the user's saved preferences to the backend.
+    const body = Object.assign(JSON.parse(JSON.stringify(sub)), { prefs: loadPrefs() });
+    await fetch('/.netlify/functions/subscribe', {
+      method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)
+    });
+    return true;
+  }catch(e){ return false; }
+}
+
+/* initial render + start auto-refresh loop */
+render();
+loadData();
+setInterval(loadData, REFRESH_MS);
+</script>
+</body>
+</html>

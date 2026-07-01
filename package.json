@@ -1,0 +1,18 @@
+{
+  "name": "get-discounted",
+  "version": "1.0.0",
+  "description": "Malaysia credit card promotion aggregator (PWA) with automated ingestion and web push.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "ingest": "node ingest/scrape.mjs",
+    "vapid": "web-push generate-vapid-keys"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0",
+    "web-push": "^3.6.7"
+  },
+  "devDependencies": {
+    "cheerio": "^1.0.0"
+  }
+}

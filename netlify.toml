@@ -1,0 +1,27 @@
+# Netlify config — static site + serverless functions for web push.
+[build]
+  publish = "."
+  command = ""
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Correct MIME type + no-cache for the live promo data so refreshes always fetch fresh.
+[[headers]]
+  for = "/promos.json"
+  [headers.values]
+    Content-Type = "application/json; charset=utf-8"
+    Cache-Control = "no-cache"
+
+# Let the service worker control the whole scope.
+[[headers]]
+  for = "/service-worker.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+    Service-Worker-Allowed = "/"
+
+[[headers]]
+  for = "/manifest.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json"
