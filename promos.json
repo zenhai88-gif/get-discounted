@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-02T11:05:10.409Z",
+  "lastUpdated": "2026-07-03T11:12:59.437Z",
   "source": "Compiled from official Malaysian bank promotion pages",
   "promos": [
     {
@@ -688,7 +688,7 @@
       "card": "RHB Credit Cards",
       "offer": "please click",
       "expiry": "2026-12-31",
-      "link": "https://www.rhbgroup.com/-/media/files/card/merchants/fei-fei-crab/contact-fei-fei-crab-20pc-off.pdf",
+      "link": "https://www.rhbgroup.com/-/media/files/card/merchants/wax-zone/contact-wax-zone-10pc-off.pdf",
       "id": "rhb-please-click",
       "source": "scraped"
     },
@@ -699,19 +699,19 @@
       "card": "RHB Credit Cards",
       "offer": "Terms and Conditions",
       "expiry": "2026-12-31",
-      "link": "https://www.rhbgroup.com/-/media/files/card/merchants/fei-fei-crab/terms-fei-fei-crab-20pc-off.pdf",
+      "link": "https://www.rhbgroup.com/-/media/files/card/merchants/wax-zone/terms-wax-zone-10pc-off.pdf",
       "id": "rhb-terms-and-conditions",
       "source": "scraped"
     },
     {
-      "merchant": "https://www.mycreditinfo.com.my/home/signup/rhb",
-      "cat": "Sign-up",
+      "merchant": "https://forms.gle/YyCKWvgaTXXNpUnh8.",
+      "cat": "Shopping",
       "bank": "RHB",
       "card": "RHB Credit Cards",
-      "offer": "https://www.mycreditinfo.com.my/home/signup/rhb",
+      "offer": "https://forms.gle/YyCKWvgaTXXNpUnh8.",
       "expiry": "2026-12-31",
-      "link": "https://www.mycreditinfo.com.my/home/signup/rhb",
-      "id": "rhb-https-www-mycreditinfo-com-my-home-signu",
+      "link": "https://forms.gle/YyCKWvgaTXXNpUnh8.",
+      "id": "rhb-https-forms-gle-yyckwvgatxxnpunh8",
       "source": "scraped"
     }
   ]
