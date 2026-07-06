@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-05T09:56:23.024Z",
+  "lastUpdated": "2026-07-06T14:17:52.693Z",
   "source": "Compiled from official Malaysian bank promotion pages",
   "promos": [
     {
@@ -688,7 +688,7 @@
       "card": "RHB Credit Cards",
       "offer": "please click",
       "expiry": "2026-12-31",
-      "link": "https://www.rhbgroup.com/-/media/files/card/merchants/wax-zone/contact-wax-zone-10pc-off.pdf",
+      "link": "https://www.rhbgroup.com/-/media/Files/card/merchants/Shopee/Contact.pdf",
       "id": "rhb-please-click",
       "source": "scraped"
     },
@@ -699,19 +699,8 @@
       "card": "RHB Credit Cards",
       "offer": "Terms and Conditions",
       "expiry": "2026-12-31",
-      "link": "https://www.rhbgroup.com/-/media/files/card/merchants/wax-zone/terms-wax-zone-10pc-off.pdf",
+      "link": "https://www.rhbgroup.com/-/media/Files/card/merchants/Shopee/tnc-shopee-ddsales.pdf",
       "id": "rhb-terms-and-conditions",
-      "source": "scraped"
-    },
-    {
-      "merchant": "https://forms.gle/YyCKWvgaTXXNpUnh8.",
-      "cat": "Shopping",
-      "bank": "RHB",
-      "card": "RHB Credit Cards",
-      "offer": "https://forms.gle/YyCKWvgaTXXNpUnh8.",
-      "expiry": "2026-12-31",
-      "link": "https://forms.gle/YyCKWvgaTXXNpUnh8.",
-      "id": "rhb-https-forms-gle-yyckwvgatxxnpunh8",
       "source": "scraped"
     }
   ]
