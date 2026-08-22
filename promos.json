@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-21T02:16:46.351Z",
+  "lastUpdated": "2026-08-22T02:08:15.818Z",
   "source": "Compiled from official Malaysian bank promotion pages",
   "promos": [
     {
@@ -688,7 +688,7 @@
       "card": "RHB Credit Cards",
       "offer": "please click",
       "expiry": "2026-12-31",
-      "link": "https://www.rhbgroup.com/-/media/files/card/merchants/roselle-coffeehouse/roselle-contact-2026.pdf",
+      "link": "https://www.rhbgroup.com/-/media/files/card/merchants/MK-CURTAIN/MK-CURTAIN_CONTACT.pdf",
       "id": "rhb-please-click",
       "source": "scraped"
     },
@@ -699,19 +699,8 @@
       "card": "RHB Credit Cards",
       "offer": "Terms and Conditions",
       "expiry": "2026-12-31",
-      "link": "https://www.rhbgroup.com/-/media/files/card/merchants/roselle-coffeehouse/roselle-tnc-2026.pdf",
+      "link": "https://www.rhbgroup.com/-/media/files/card/merchants/MK-CURTAIN/MK-CURTAIN-Promo_TC_2026.pdf",
       "id": "rhb-terms-and-conditions",
-      "source": "scraped"
-    },
-    {
-      "merchant": "https://privileges.anantaravacationclub.com/21RHMY0626P-O/en/",
-      "cat": "Shopping",
-      "bank": "RHB",
-      "card": "RHB Credit Cards",
-      "offer": "https://privileges.anantaravacationclub.com/21RHMY0626P-O/en/",
-      "expiry": "2026-12-31",
-      "link": "https://privileges.anantaravacationclub.com/21RHMY0626P-O/en/",
-      "id": "rhb-https-privileges-anantaravacationclub-co",
       "source": "scraped"
     }
   ]
