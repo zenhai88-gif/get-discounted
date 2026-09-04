@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-03T05:17:58.707Z",
+  "lastUpdated": "2026-09-04T05:13:36.595Z",
   "source": "Compiled from official Malaysian bank promotion pages",
   "promos": [
     {
@@ -688,7 +688,7 @@
       "card": "RHB Credit Cards",
       "offer": "please click",
       "expiry": "2026-12-31",
-      "link": "https://www.rhbgroup.com/-/media/files/card/merchants/Optimax/contact-optimax.pdf",
+      "link": "https://www.rhbgroup.com/-/media/files/card/merchants/one-cycling-industry/One-Cycling_Contact.pdf",
       "id": "rhb-please-click",
       "source": "scraped"
     },
@@ -699,7 +699,7 @@
       "card": "RHB Credit Cards",
       "offer": "Terms and Conditions",
       "expiry": "2026-12-31",
-      "link": "https://www.rhbgroup.com/-/media/files/card/merchants/Optimax/tnc-optimax.pdf",
+      "link": "https://www.rhbgroup.com/-/media/files/card/merchants/one-cycling-industry/Promo_TC_2026_V1.pdf",
       "id": "rhb-terms-and-conditions",
       "source": "scraped"
     }
