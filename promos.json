@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-13T05:28:52.045Z",
+  "lastUpdated": "2026-09-14T05:32:57.152Z",
   "source": "Compiled from official Malaysian bank promotion pages",
   "promos": [
     {
@@ -688,7 +688,7 @@
       "card": "RHB Credit Cards",
       "offer": "please click",
       "expiry": "2026-12-31",
-      "link": "https://www.rhbgroup.com/-/media/files/card/merchants/taobao/contact-taobao-july-sep.pdf",
+      "link": "https://www.rhbgroup.com/-/media/files/card/merchants/shopee/Contact-Shopee-iphone.pdf",
       "id": "rhb-please-click",
       "source": "scraped"
     },
@@ -699,7 +699,7 @@
       "card": "RHB Credit Cards",
       "offer": "Terms and Conditions",
       "expiry": "2026-12-31",
-      "link": "https://www.rhbgroup.com/-/media/files/card/merchants/taobao/tnc-taobao-rebate.pdf",
+      "link": "https://www.rhbgroup.com/-/media/files/card/merchants/shopee/tnc-shopee-iphone.pdf",
       "id": "rhb-terms-and-conditions",
       "source": "scraped"
     }
