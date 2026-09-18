@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-17T05:34:43.669Z",
+  "lastUpdated": "2026-09-18T05:22:48.066Z",
   "source": "Compiled from official Malaysian bank promotion pages",
   "promos": [
     {
@@ -682,13 +682,24 @@
       "source": "scraped"
     },
     {
+      "merchant": "https://mobileapp.iggesports.com",
+      "cat": "Shopping",
+      "bank": "RHB",
+      "card": "RHB Credit Cards",
+      "offer": "https://mobileapp.iggesports.com",
+      "expiry": "2026-12-31",
+      "link": "https://mobileapp.iggesports.com/",
+      "id": "rhb-https-mobileapp-iggesports-com",
+      "source": "scraped"
+    },
+    {
       "merchant": "please click",
       "cat": "Shopping",
       "bank": "RHB",
       "card": "RHB Credit Cards",
       "offer": "please click",
       "expiry": "2026-12-31",
-      "link": "https://www.rhbgroup.com/-/media/files/card/merchants/lazada/Contact-Lazada.pdf",
+      "link": "https://www.rhbgroup.com/-/media/Files/card/merchants/iGG/Contact.pdf",
       "id": "rhb-please-click",
       "source": "scraped"
     },
@@ -699,7 +710,7 @@
       "card": "RHB Credit Cards",
       "offer": "Terms and Conditions",
       "expiry": "2026-12-31",
-      "link": "https://www.rhbgroup.com/-/media/files/card/merchants/lazada/tnc-lazada-iphone.pdf",
+      "link": "https://www.rhbgroup.com/-/media/Files/card/merchants/iGG/Promo-TnC_2026.pdf",
       "id": "rhb-terms-and-conditions",
       "source": "scraped"
     }
