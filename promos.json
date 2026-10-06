@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-05T06:23:44.316Z",
+  "lastUpdated": "2026-10-06T06:59:44.979Z",
   "source": "Compiled from official Malaysian bank promotion pages",
   "promos": [
     {
@@ -682,24 +682,13 @@
       "source": "scraped"
     },
     {
-      "merchant": "https://mobileapp.iggesports.com",
-      "cat": "Shopping",
-      "bank": "RHB",
-      "card": "RHB Credit Cards",
-      "offer": "https://mobileapp.iggesports.com",
-      "expiry": "2026-12-31",
-      "link": "https://mobileapp.iggesports.com/",
-      "id": "rhb-https-mobileapp-iggesports-com",
-      "source": "scraped"
-    },
-    {
       "merchant": "please click",
       "cat": "Shopping",
       "bank": "RHB",
       "card": "RHB Credit Cards",
       "offer": "please click",
       "expiry": "2026-12-31",
-      "link": "https://www.rhbgroup.com/-/media/Files/card/merchants/iGG/Contact.pdf",
+      "link": "https://www.rhbgroup.com/-/media/Files/card/merchants/Visa-Oct-Deals/Discovery-Park-contact.pdf",
       "id": "rhb-please-click",
       "source": "scraped"
     },
@@ -710,7 +699,7 @@
       "card": "RHB Credit Cards",
       "offer": "Terms and Conditions",
       "expiry": "2026-12-31",
-      "link": "https://www.rhbgroup.com/-/media/Files/card/merchants/iGG/Promo-TnC_2026.pdf",
+      "link": "https://www.rhbgroup.com/-/media/Files/card/merchants/Visa-Oct-Deals/Discovery-Park-_Promo-TnC_Tactical-Offer.pdf",
       "id": "rhb-terms-and-conditions",
       "source": "scraped"
     }
