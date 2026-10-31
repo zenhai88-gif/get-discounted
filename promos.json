@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-30T06:36:16.753Z",
+  "lastUpdated": "2026-10-31T06:25:32.681Z",
   "source": "Compiled from official Malaysian bank promotion pages",
   "promos": [
     {
@@ -688,7 +688,7 @@
       "card": "RHB Credit Cards",
       "offer": "please click",
       "expiry": "2026-12-31",
-      "link": "https://www.rhbgroup.com/-/media/Files/card/merchants/Shopee/Contact-Shopee-1.pdf",
+      "link": "https://www.rhbgroup.com/-/media/Files/card/merchants/TOUS-LES-JOURS/Tous-Les-Jours-Contact.pdf",
       "id": "rhb-please-click",
       "source": "scraped"
     },
@@ -699,7 +699,7 @@
       "card": "RHB Credit Cards",
       "offer": "Terms and Conditions",
       "expiry": "2026-12-31",
-      "link": "https://www.rhbgroup.com/-/media/Files/card/merchants/Shopee/Shopee-Apple-TnC.pdf",
+      "link": "https://www.rhbgroup.com/-/media/Files/card/merchants/TOUS-LES-JOURS/Tous-Les-Jours_Promo-TnC.pdf",
       "id": "rhb-terms-and-conditions",
       "source": "scraped"
     }
