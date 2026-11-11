@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-10T07:51:57.642Z",
+  "lastUpdated": "2026-11-11T07:19:46.989Z",
   "source": "Compiled from official Malaysian bank promotion pages",
   "promos": [
     {
@@ -682,25 +682,25 @@
       "source": "scraped"
     },
     {
-      "merchant": "Book here",
-      "cat": "Shopping",
-      "bank": "RHB",
-      "card": "RHB Credit Cards",
-      "offer": "Book here",
-      "expiry": "2026-12-31",
-      "link": "https://www.shangri-la.com/en/kualalumpur/traders/offer-detail/rooms-suites/mastercard-exclusive-stay?WT.mc_id=RGN-SEAA_20260201_MULTI_REFERRAL_MASTERCARD_TACTICAL-REGIONAL_ABOUT-CTA_MCSTAY26_EN-NA-THKL",
-      "id": "rhb-book-here",
-      "source": "scraped"
-    },
-    {
       "merchant": "Terms and Conditions",
       "cat": "Shopping",
       "bank": "RHB",
       "card": "RHB Credit Cards",
       "offer": "Terms and Conditions",
       "expiry": "2026-12-31",
-      "link": "https://www.rhbgroup.com/-/media/files/card/merchants/traders/tnc-traders.pdf",
+      "link": "https://www.rhbgroup.com/-/media/files/card/merchants/aw/tnc-anw.pdf",
       "id": "rhb-terms-and-conditions",
+      "source": "scraped"
+    },
+    {
+      "merchant": "https://www.cakerush.my",
+      "cat": "Shopping",
+      "bank": "RHB",
+      "card": "RHB Credit Cards",
+      "offer": "https://www.cakerush.my",
+      "expiry": "2026-12-31",
+      "link": "https://www.cakerush.my/",
+      "id": "rhb-https-www-cakerush-my",
       "source": "scraped"
     }
   ]
